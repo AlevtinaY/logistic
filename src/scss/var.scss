@@ -1,0 +1,202 @@
+$active1: #ffc047;
+$active2: #ffe036;
+$active3: #caa45a;
+$orange: #f4b844;
+$orange-d: #d3ab5e;
+$dark: #231913;
+$grey: #cac8c7;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 20px;
+  font-family: 'SegoeUI', Arial, sans-serif;
+}
+@media (max-width: 767px) {
+  html { font-size: 18px; }
+}
+
+@media (max-width: 575px) {
+  html { font-size: 16px; }
+}
+
+input, 
+textarea, 
+select, 
+button {
+  font-family: inherit;
+}
+
+
+iframe {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  frameborder: 0;
+}
+
+.btn {
+  position: relative;
+  display: block;
+  width: 320px;
+  max-width: 100%;
+  height: 62px;
+  padding-top: 20px;
+  margin: 0 auto;
+
+  font: 700 1.25rem/1 'SegoeUI', Arial, sans-serif;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  background: #ff2233 url(../img/btn-bg.png) center center no-repeat;
+  background-size: cover;
+  box-shadow: 0 0 60px 5px rgba(255, 34, 51, .49);
+
+  transition: all .35s;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    width: calc(100% - 2px);
+    height: 60px;
+
+    border: 1px solid #ffffff;
+    transform: translate(10px, 13px);
+    transition: all .35s linear;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: -55px;
+    bottom: 20px;
+
+    display: block;
+    width: 70px;
+    height: 1px;
+
+    background-color: #ffffff;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    &::before {
+      transform: translate(0, 0);
+    }
+  }
+}
+
+
+.btn-top {
+  position: fixed;
+  z-index: 999;
+  top: 55%;
+  right: 0;
+
+  display: none;
+  width: 163px;
+  height: 58px;
+
+  background-color: #fff;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  box-shadow: 0 0 40px 10px rgba(0,0,0,.09);
+
+  text-align: center;
+  text-decoration: none;
+
+  color: #d4ae66;
+  font: .9rem/58px 'DemiC', Arial, sans-serif;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+
+    width: 13px;
+    height: 20px;
+    margin-left: 10px;
+
+    background: url(../img/icon-up.png) center center no-repeat;
+    background-size: contain;
+  }
+
+  &--show {
+    display: block;
+  }
+}
+
+
+@keyframes blick {
+  0% {
+    left: 0;
+  }
+  60% {
+    left: 120%;
+  }
+  100% {
+    left: 130%;
+  }
+}
+
+*::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #ffffff;
+}
+*::-moz-placeholder { /* Firefox 19+ */
+  color: ffffff;
+}
+*:-ms-input-placeholder { /* IE 10+ */
+  color: ffffff;
+}
+*:-moz-placeholder { /* Firefox 18- */
+  color: ffffff;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.page {
+  position: relative;
+}
+
+.page__wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.main {
+  position: absolute;
+  top: 0;
+}

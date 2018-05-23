@@ -1,0 +1,311 @@
+/*   var one = document.querySelector('.office-1');
+var two = document.querySelector('.office-2');
+var three = document.querySelector('.office-3');
+var four = document.querySelector('.office-4');
+var wrap = document.querySelector('.offices__wrap');
+var before = 0;
+var beforeY = 0;
+var beforeX = 0;
+var n = 0;
+var toTop = wrap.offsetTop; */
+
+  // window.addEventListener('scroll', function(e) {
+  //   // console.log('window.pageYOffset: ' + window.pageYOffset );
+  //   // console.log('wrap.scrollTop: ' + wrap.offsetTop );
+
+    
+  //   if(window.pageYOffset > toTop ) { 
+  //     wrap.classList.add('offices__wrap--fixed');
+     
+
+  //     console.log('window.pageYOffset: ' + window.pageYOffset );
+  //     console.log('toTop: ' + toTop );
+  //     // console.log('toTop ' + (toTop + window.innerHeight ) );
+  //     console.log('window.innerHeight ' + window.innerHeight );
+  //     console.log('window.innerWidth ' + window.innerWidth );
+  //     console.log('toTop2 ' + (toTop + window.innerWidth + window.innerHeight) );
+
+  //     if(window.pageYOffset < toTop + window.innerWidth) {
+  //     console.log(1);
+  //         if(before) {
+  //           n = window.pageYOffset - before;
+  //           two.style.left = '-' + n + 'px';
+  //           one.style.left = '-' + n + 'px';
+  //         } else {
+  //           before = window.pageYOffset;
+  //           n = before;
+  //         }
+  //       }
+  //     else if (window.pageYOffset < toTop + window.innerWidth + window.innerHeight) {
+  //        console.log(2);
+  //         if(beforeY) {
+  //           n = window.pageYOffset - beforeY;
+  //           three.style.bottom =  n + 'px';
+  //           two.style.top =  -n + 'px';
+
+  //         } else {
+  //           beforeY = window.pageYOffset;
+  //           n = beforeY;
+  //         }
+  //     } else if (window.pageYOffset < toTop + window.innerWidth*2 + window.innerHeight) {
+  //        console.log(3);
+  //         if(beforeX) {
+  //           n = window.pageYOffset - beforeX;
+  //           four.style.left =  n + 'px';
+  //           three.style.left =  n + 'px';
+
+  //         } else {
+  //           beforeX = window.pageYOffset;
+  //           n = beforeX;
+  //         }
+  //     } 
+  //     else {
+  //        wrap.classList.remove('offices__wrap--fixed');
+  //        wrap.classList.add('offices__wrap--absl');
+  //     }
+  //   } else {
+  //      wrap.classList.remove('offices__wrap--fixed');
+  //   }
+  // });
+
+
+.offices__wrap {
+  // display: none;  
+  position: relative;
+  z-index: 1;
+  // height: 500vh;
+  width: 100%;  
+  height: 100vh;  
+
+  &--fixed {
+    position: fixed;  
+    z-index: 1000;
+    top: 0;
+    left: 0;
+  } 
+  &--absl {
+    position: absolute;  
+    z-index: 1000;
+    top: 0;
+    left: 0;
+  }
+}
+
+.offices {
+  position: fixed;  
+  z-index: -1;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  overflow: hidden;
+  min-height: 100vh;  
+
+  background: url(../img/office-bg.png) center center no-repeat;
+  background-size: cover; 
+
+
+
+  color: #ffffff;
+}
+
+.office-1 {
+  // padding: 128px calc((100% - 1280px)/2) 270px;
+  padding: 0 calc((100% - 1280px)/2);
+  min-height: 100vh;
+
+
+  .office__address-title {
+    transform: translateX(-175px);
+  }
+}
+
+.office__title {
+  width: 100%;
+  margin-bottom: 16px;
+
+  
+  font-size: 2.4rem;
+  letter-spacing: calc(1em * 0.1);
+  text-align: center;
+  text-transform: uppercase;
+
+  &--first {
+    display: block;
+
+    font-weight: 700;
+  }
+  &--second {
+    display: block;
+
+    font-weight: 300;
+  }
+}
+
+.office__dscr {
+  margin-bottom: 145px;
+
+  font-weight: 300;
+  font-size: 1.2rem;
+  letter-spacing: calc(1em * 0.025);
+  line-height: 1.1;
+  text-align: center;
+
+  b {
+    font-weight: normal;
+  }
+}
+
+.office__address {
+  position: relative;
+  width: 965px;
+  max-width: 100%;
+  margin: 0 25px 0 auto;
+  padding: 30px 0 50px 465px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;bottom: 0;
+    left: 0; right: 0;
+
+    display: block;
+    border: 1px solid #ff2233;
+  }
+}
+
+.office__address-img {
+  position: absolute;
+  z-index: 2;
+  left: -248px;
+  top: -100px;
+
+  display: block;
+  width: 695px;
+  height: auto;
+}
+
+.office__address-title {
+  position: relative;
+  z-index: 3;
+
+  width: 100%;
+  margin-bottom: 16px;
+
+  
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: calc(1em * 0.1);
+  text-align: center;
+  text-transform: uppercase;
+}
+.office__address-dscr {
+  position: relative;
+  z-index: 3;
+  margin-bottom: 26px;
+
+  font-weight: 300;
+  font-size: .9rem;
+  line-height: 1.1;
+}
+
+.office__address-text {
+
+  position: relative;
+  z-index: 3;
+
+  margin-bottom: 20px;
+
+  color: #ffffff;
+  font-size: .9rem;
+  line-height: 1.2;
+  text-decoration: none;
+
+  span {
+    font-weight: 300;
+  }
+}
+
+
+.office {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.office-2 {
+  // padding: 110px calc((100% - 1280px)/2) 545px;
+  // min-height: 100vh;
+
+  text-align: center;
+
+  .office__address {
+      margin: 0 auto;
+      padding: 45px 10px 65px;
+  }
+
+  .office__address-img {
+      left: 50px;
+      top: auto;
+      bottom: -320px;
+ 
+      width: 830px;
+  }
+}
+
+.office-4,
+.office-3 {
+  padding: 160px calc((100% - 1280px)/2) 550px;
+  min-height: 100vh;
+
+  text-align: center;
+
+  .office__address {
+      margin: 0 auto;
+      padding: 45px 10px 85px;
+  }
+
+  .office__address-img {
+      left: 50px;
+      top: auto;
+      bottom: 70px;
+ 
+      width: 830px;
+
+      transform: translateY(100%);
+  }
+}
+
+.office-3 {
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+}
+.office-4 {
+  position: absolute;
+  z-index: 4;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+    // background-color: green;
+    // opacity: .9;
+}
+.office-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  // background-color: orange;
+}
+.office-2 {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  transform: translateX(100%);
+    // background-color: yellow;
+}
